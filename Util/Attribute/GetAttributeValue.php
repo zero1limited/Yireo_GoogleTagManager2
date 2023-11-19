@@ -85,6 +85,10 @@ class GetAttributeValue
             /** @phpstan-ignore-next-line  */
             return $entity->getId();
         }
+        if ($attributeCode === 'group_id') {
+            /** @phpstan-ignore-next-line  */
+            return $entity->getGroupId();
+        }
 
         $attribute = $this->eavConfig->getAttribute($entityType, $attributeCode);
         $entityAttribute = $entity->getCustomAttribute($attributeCode);
